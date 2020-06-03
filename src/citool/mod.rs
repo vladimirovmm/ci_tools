@@ -70,9 +70,12 @@ impl CiTools{
             })
             // Установить CI PATH
             .register_exec_function("ci_path".to_string(), |command, tools|->Result<String,String>{
+                if command.value.is_none() {
+                    return Err("CI_PATH set = Параметр не передан".to_string());
+                }
                 tools.config.ci_path = command.value.clone();
                 tools.config.save();
-                Ok("CI_PATH set = ".to_string() )
+                Ok("CI_PATH set = ".to_string()+command.value.clone().unwrap().as_str() )
             })
     }
     pub fn register_exec_function(&mut self, name:String, f:fn(CiToolsCommand, &mut CiTools)->Result<String,String>)->&mut CiTools{
