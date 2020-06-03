@@ -35,7 +35,7 @@ impl CILangsTools{
                     langs-show-can-translate-files - вывести не переведёные файлы\n\
                     langs-show-can-translate-word - вывести не переведёные слова\n\
                     langs-yandex-translate-key-show - вывести ключ от yandex-translate\n\
-                    langs-yandex-translate-key-set - установить ключ от yandex-translate\n\
+                    langs-yandex-translate-key-set=[KEY] - установить ключ от yandex-translate\n\
                     langs-yandex-translate - перевести не переведённые фразы через yandex-translate\n\
                     \n- - -\n".to_string())
             })
